@@ -54,7 +54,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    fetchLocation("hi,en"); // Default Hindi location fetch
+    fetchLocation("hi,en");
   }, []);
 
   const toggleLanguage = () => {
@@ -66,12 +66,10 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-500 sticky top-14 z-10 text-white">
       <div className="flex items-center justify-between px-4 py-2">
-        {/* Mobile Menu Icon */}
         <button className="md:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
           <FiMenu />
         </button>
 
-        {/* Location */}
         <div className="flex items-center space-x-2 font-semibold">
           <span className="text-lg">
             <IoLocationSharp />
@@ -79,7 +77,6 @@ const Navbar = () => {
           <span>{location}</span>
         </div>
 
-        {/* Toggle Language Button */}
         <button
           onClick={toggleLanguage}
           className="flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-lg hover:bg-gray-700 transition duration-200"
@@ -89,12 +86,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Navigation Links */}
-      <div
-        className={`md:flex md:items-center md:justify-between px-6 py-2 ${
-          menuOpen ? "block" : "hidden"
-        } md:flex-row md:flex-wrap overflow-x-auto whitespace-nowrap`}
-      >
+      <div className={`md:flex md:items-center md:justify-between px-6 py-2 ${menuOpen ? "block" : "hidden"}`}>
         <div className="flex flex-row md:items-center space-x-6 text-sm font-semibold">
           <span onClick={() => navigate("/casino")} className="cursor-pointer hover:opacity-80">
             CASINO
@@ -112,7 +104,10 @@ const Navbar = () => {
           {/* Bonuses Dropdown */}
           <div className="relative dropdown-container">
             <button
-              onClick={() => handleDropdown("bonuses")}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDropdown("bonuses");
+              }}
               className="bg-red-600 px-3 py-1 rounded flex items-center space-x-1"
             >
               <span>🔥</span>
@@ -130,12 +125,15 @@ const Navbar = () => {
 
           {/* Megagames Dropdown */}
           <div className="relative dropdown-container">
-            <span
-              onClick={() => handleDropdown("megagames")}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDropdown("megagames");
+              }}
               className="cursor-pointer hover:opacity-80 flex items-center space-x-1"
             >
               <span>MEGAGAMES</span> <span>▼</span>
-            </span>
+            </button>
             {activeDropdown === "megagames" && (
               <div className="absolute left-0 mt-2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300">
                 <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">Crash</div>
@@ -147,12 +145,15 @@ const Navbar = () => {
 
           {/* More Dropdown */}
           <div className="relative dropdown-container">
-            <span
-              onClick={() => handleDropdown("more")}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDropdown("more");
+              }}
               className="cursor-pointer hover:opacity-80 flex items-center space-x-1"
             >
               <span>MORE</span> <span>▼</span>
-            </span>
+            </button>
             {activeDropdown === "more" && (
               <div className="absolute left-0 mt-2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300">
                 <div className="hover:bg-gray-100 p-2 rounded cursor-pointer">Virtual Sports</div>
