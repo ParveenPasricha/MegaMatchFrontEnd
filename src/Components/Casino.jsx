@@ -53,7 +53,7 @@ const Casino = () => {
     {
       image: "https://v3.traincdn.com/genfiles/third-party-files/a1cb073aa76774e552e676d75040b5d7/101170.jpg",
       category : "NEW",
-      onclick:  "http://www.google.com"
+      onclick:  "https://playful-worlds-quest.vercel.app/"
     },
     {
       image: "https://v3.traincdn.com/genfiles/slots/games/887/img78707.jpeg",
