@@ -8,6 +8,9 @@ const Casino = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("ALL");
 
+  const handleGameClick=(category)=>{
+    console.log(`Click toh aaha hai ${category}`)
+  }
   const CasinoSlides = [
     {
       text: "1 One",
@@ -643,6 +646,7 @@ const Casino = () => {
                 src={game.image}
                 alt="game"
                 className="w-full h-40 object-cover rounded-md"
+                onClick={()=>handleGameClick(game.category)}
               />
             </div>
           ))}

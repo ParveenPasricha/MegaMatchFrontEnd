@@ -20,6 +20,7 @@ import LiveScore from "./Components/LiveScore";
 import NotFound from "./Components/NotFound";  // Import the NotFound Component
 import Casino from "./Components/Casino";
 import { Sidebar } from "lucide-react";
+import RightBar from "./Components/RightBar";
 
 const App = () => {
   return (
@@ -28,15 +29,15 @@ const App = () => {
       <Navbar />
       {/* <SideBar /> <><Sidebar /></> */}
       <Routes>
-        <Route path="/" element={<><SideBar/><Test/></>} />
-        <Route path="/reel" element={<><Sidebar /><Reel /></>} />
+        <Route path="/" element={<Casino/>} />
+        <Route path="/reel" element={<><SideBar /><Reel /></>} />
         <Route path="/ipl" element={<><SideBar /><IPL /></>} />
         <Route path="/hot" element={<><SideBar /><Hot /></>} />
-        <Route path="/livematch" element={<><Sidebar /><Livematch /></>} />
-        <Route path="/cricketgame" element={<><Sidebar /><CricketGame /></>} />
-        <Route path="/login" element={<><Sidebar /><Login /></>} />
-        <Route path="/signup" element={<><Sidebar /><Signup /></>} />
-        <Route path="/cricket" element={<><SideBar /><Cricket/></>} />
+        <Route path="/livematch" element={<><SideBar /><Livematch /></>} />
+        <Route path="/cricketgame" element={<><SideBar /><CricketGame /></>} />
+        <Route path="/login" element={<><SideBar /><Login /></>} />
+        <Route path="/signup" element={<><SideBar /><Signup /></>} />
+        <Route path="/cricket" element={<><SideBar /><Cricket /></>} />
         <Route path="/livescore" element={<><SideBar /><LiveScore /></>} />
         <Route path="/casino" element={<Casino/> } />
 
