@@ -7,10 +7,15 @@ import Footer from "./Footer";
 const Casino = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("ALL");
+  
+  const handleGameClick = (game) => {
+    if (game.onclick) {
+      window.open(game.onclick, "_blank");
+    } else {
+      console.log(`Clicked on category: ${game.category}`);
+    }
+  };
 
-  const handleGameClick=(category)=>{
-    console.log(`Click toh aaha hai ${category}`)
-  }
   const CasinoSlides = [
     {
       text: "1 One",
@@ -47,7 +52,8 @@ const Casino = () => {
     },
     {
       image: "https://v3.traincdn.com/genfiles/third-party-files/a1cb073aa76774e552e676d75040b5d7/101170.jpg",
-      category : "NEW"
+      category : "NEW",
+      onclick:  "http://www.google.com"
     },
     {
       image: "https://v3.traincdn.com/genfiles/slots/games/887/img78707.jpeg",
@@ -631,26 +637,25 @@ const Casino = () => {
 
         {/* Game Grid */}
         <div
-          style={{ height: "50%" }}
-          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full"
+      style={{ height: "50%" }}
+      className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full"
+    >
+      {Games.filter(
+        (game) => selectedCategory === "ALL" || game.category === selectedCategory
+      ).map((game, index) => (
+        <div
+          key={index}
+          className="bg-gray-800 mb-4 p-4 rounded-lg shadow-md hover:shadow-xl transition-all"
         >
-          {Games.filter(
-            (game) =>
-              selectedCategory === "ALL" || game.category === selectedCategory
-          ).map((game, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 mb-4 p-4 rounded-lg shadow-md hover:shadow-xl transition-all"
-            >
-              <img
-                src={game.image}
-                alt="game"
-                className="w-full h-40 object-cover rounded-md"
-                onClick={()=>handleGameClick(game.category)}
-              />
-            </div>
-          ))}
+          <img
+            src={game.image}
+            onClick={() => handleGameClick(game)}
+            alt="game"
+            className="w-full h-40 object-cover rounded-md"
+          />
         </div>
+      ))}
+    </div>
       </div>
       <Footer/>
     </div>
