@@ -83,7 +83,7 @@ const Navbar = () => {
         </button>
 
         {/* Location */}
-        <div className="flex items-center space-x-2 font-semibold">
+        <div className="flex items-center mx-15 space-x-2 font-semibold">
           <span className="text-lg">
             <IoLocationSharp />
           </span>
@@ -124,6 +124,12 @@ const Navbar = () => {
             className="cursor-pointer hover:opacity-80"
           >
             SPORTS
+          </span>
+          <span
+            onClick={() => navigate("/todaymatches")}
+            className="cursor-pointer hover:opacity-80"
+          >
+            Today Matches
           </span>
 
           {/* Bonuses Dropdown */}

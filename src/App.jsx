@@ -17,10 +17,11 @@ import SuperAdminLogin from "./SuperAdmin/SuperAdminLogin";
 import ProtectedRoute from "./SuperAdmin/ProtectedRoute";
 import SuperAdminDashboard from "./SuperAdmin/SuperAdminDashboard";
 import LiveScore from "./Components/LiveScore";
-import NotFound from "./Components/NotFound";  // Import the NotFound Component
+import NotFound from "./Components/NotFound";  
 import Casino from "./Components/Casino";
 import { Sidebar } from "lucide-react";
 import RightBar from "./Components/RightBar";
+import TodayMatches from "./Components/TodayMatches";
 
 const App = () => {
   return (
@@ -40,7 +41,8 @@ const App = () => {
         <Route path="/cricket" element={<><SideBar /><Cricket /></>} />
         <Route path="/livescore" element={<><SideBar /><LiveScore /></>} />
         <Route path="/casino" element={<Casino/> } />
-
+        <Route path="/todaymatches" element={<><SideBar /><TodayMatches/></>} />
+        
         {/* SuperAdmin Routes */}
         <Route path="/admin" element={<SuperAdminLogin />} />
         <Route
