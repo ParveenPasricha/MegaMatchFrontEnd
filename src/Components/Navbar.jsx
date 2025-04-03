@@ -140,63 +140,66 @@ const Navbar = () => {
               <span>▼</span>
             </button>
             {activeDropdown === "bonuses" && (
-              <div className="absolute top-full left-0 mt-1 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300 z-10">
-                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">
+              <div className="fixed top-36 mx-32 transform -translate-x-1/2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300 z-[9999]">
+                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer" onClick={()=> navigate('/firstdeposit')}>
                   🔥 First Deposit
                 </div>
-                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer" onClick={()=> navigate('/casinocashback')}>
                   💰 Casino Cashback
                 </div>
-                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer" onClick={()=> navigate('/pack')}>
                   🍒 Welcome Pack
                 </div>
               </div>
             )}
           </div>
-
-          {/* Megagames Dropdown */}
+          {/* MegaGames DropDown */}
           <div className="relative dropdown-container">
-            <span
-              onClick={() => handleDropdown("megagames")}
-              className="cursor-pointer hover:opacity-80 flex items-center space-x-1"
+            <button
+              onClick={(e) =>{ 
+                e.stopPropagation()
+                handleDropdown("megagames")
+              }}
+              className="bg-red-600 relative px-3 py-1 rounded flex items-center space-x-1"
             >
               <span>MEGAGAMES</span> <span>▼</span>
-            </span>
+            </button>
             {activeDropdown === "megagames" && (
-              <div className="absolute left-0 mt-2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300">
-                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">
+              <div className="fixed top-36 mx-32 transform -translate-x-1/2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300 z-[9999]">
+                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer" onClick={()=> navigate('/crash')}>
                   Crash
                 </div>
-                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer" onClick={()=> navigate('/crystal')}>
                   Crystal
                 </div>
-                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-200 p-2 rounded cursor-pointer" onClick={()=> navigate('/westernslot')}>
                   Western Slot
                 </div>
               </div>
             )}
           </div>
-
           {/* More Dropdown */}
           <div className="relative dropdown-container">
-            <span
-              onClick={() => handleDropdown("more")}
-              className="cursor-pointer hover:opacity-80 flex items-center space-x-1"
+            <button
+              onClick={(e) => {
+                e.stopPropagation() 
+                handleDropdown("more")}}
+              className="bg-red-600 relative px-3 py-1 rounded flex items-center space-x-1"
             >
               <span>MORE</span> <span>▼</span>
-            </span>
+            </button>
             {activeDropdown === "more" && (
-              <div className="absolute left-0 mt-2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300">
-                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer">
+              <div className="fixed top-36 mx-32 transform -translate-x-1/2 bg-white text-black w-48 shadow-lg rounded-lg p-2 border border-gray-300 z-[9999]">
+                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer" onClick={()=> navigate('/ipl')}>
                   Virtual Sports
                 </div>
-                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer" onClick={()=> navigate('/fastbet')}>
                   Fast Bet
                 </div>
-                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer" onClick={()=> navigate('/fishing')}>
                   Hunting & Fishing
                 </div>
-                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer">
+                <div className="hover:bg-gray-100 p-2 rounded cursor-pointer" onClick={()=> navigate('/bingo')}>
                   Bingo
                 </div>
               </div>
