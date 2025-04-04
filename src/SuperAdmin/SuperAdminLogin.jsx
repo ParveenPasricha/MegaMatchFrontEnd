@@ -13,7 +13,7 @@ const SuperAdminLogin = () => {
       localStorage.setItem("authToken", "superadmin"); 
       console.log("Stored Token:", localStorage.getItem("authToken"));
   
-      navigate("/dashboard");
+      navigate("/SuperAdminDashboard");
     } else {
       setError("Invalid email or password");
     }

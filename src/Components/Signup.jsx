@@ -11,7 +11,6 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    otp: "",
     role: "user", // Default role
   });
 
